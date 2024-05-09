@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="681.0" styleClass="menu" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.certificatcont">
+   <children>
+      <AnchorPane fx:id="arr_p" layoutX="148.0" layoutY="13.0" prefHeight="476.0" prefWidth="523.0" styleClass="arr_p" stylesheets="@application.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+         <children>
+            <Label layoutX="147.0" layoutY="14.0" prefHeight="46.0" prefWidth="224.0" text="CERTIFICAT MEDICAL" textAlignment="CENTER">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Line endX="158.66665649414062" endY="7.62939453125E-6" layoutX="229.0" layoutY="60.0" startX="-100.0" />
+            <TextField fx:id="textnom" layoutX="54.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" promptText="NOM.." />
+            <Label layoutX="42.0" layoutY="85.0" prefHeight="46.0" prefWidth="285.0" text="Veuillez entrer les informations du patient" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textprenom" layoutX="313.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" promptText="PRENOM..." />
+            <TextField fx:id="date" layoutX="54.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DATE...(jj-mm-anne)" />
+            <TextField fx:id="duree" layoutX="313.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DUREE DU CONGE..(jour)" />
+            <Button layoutX="147.0" layoutY="272.0" mnemonicParsing="false" onAction="#remplircer" prefHeight="33.0" prefWidth="187.0" text="REMPLIR LE CERTIFICAT" />
+            <Label fx:id="label1" layoutX="54.0" layoutY="171.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="label2" layoutX="313.0" layoutY="171.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="label3" layoutX="54.0" layoutY="236.0" prefHeight="17.0" prefWidth="149.0" />
+            <Label fx:id="label4" layoutX="313.0" layoutY="236.0" prefHeight="17.0" prefWidth="149.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="prendre_rdv" layoutY="274.0" mnemonicParsing="false" onAction="#switchtoprendrerdv" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PRENDRE UN RDV" textAlignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/png-clipart-calendar-computer-icons-symbol-symbol-miscellaneous-text.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="ecrir_or" layoutX="-1.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchtoEcrire_ord" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="ECRIRE UNE ORDONANCE " textAlignment="CENTER">
+         <font>
+            <Font size="6.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/PRO.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="patient" layoutY="215.0" mnemonicParsing="false" onAction="#switchtopatient" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PATIENTS">
+         <font>
+            <Font size="8.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.53" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/1430402.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="pr_j" layoutX="-1.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchtoProg" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PROGRAMME JOUR" textAlignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/calnder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutY="6.0" prefHeight="72.0" prefWidth="149.0">
+         <children>
+            <Label layoutX="41.0" layoutY="3.0" prefHeight="33.0" prefWidth="76.0" text="CABINET ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="25.0" prefHeight="33.0" prefWidth="67.0" text="DR.BEN">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Line endX="78.83332824707031" endY="7.62939453125E-6" layoutX="60.0" layoutY="59.0" startX="-40.040428161621094" startY="7.62939453125E-6" />
+         </children>
+      </Pane>
+      <Button fx:id="prendre_rdv1" layoutY="331.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="CERTIFICAT MEDICAL" textAlignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/PRO.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="prendre_rdv11" layoutY="389.0" mnemonicParsing="false" onAction="#switchtoFICHEP" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="FICHE PATIENT" textAlignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/PRO.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
