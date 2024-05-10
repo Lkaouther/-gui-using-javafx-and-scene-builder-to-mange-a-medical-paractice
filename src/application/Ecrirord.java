@@ -134,7 +134,7 @@ Label label6;
         	label3.setStyle("-fx-text-fill:red;");
         }
       //---------------------------------------------------------------------------------
-        if (diagnostique.matches("[a-zA-Z0-9']+")) {
+        if (diagnostique.matches("[a-zA-Z0-9' ,]+")) {
         	label4.setText("*Diagnostique correct");
         	label4.setStyle("-fx-text-fill:green;");
         	i++;
@@ -143,7 +143,7 @@ Label label6;
         	label4.setStyle("-fx-text-fill:red;");
         }
       //---------------------------------------------------------------------------------
-        if (medic.matches("[a-zA-Z0-9']+")) {
+        if (medic.matches("[a-zA-Z0-9' ,]+")) {
         	label5.setText("*Medicament correct");
         	label5.setStyle("-fx-text-fill:green;");
         	i++;
