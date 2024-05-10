@@ -109,7 +109,7 @@ Label label6;
 	        	label2.setStyle("-fx-text-fill:red;");
 	        }
 	        //---------------------------------------------------------
-	        if (d.matches("[a-zA-Z0-9']+")) {
+	        if (d.matches("[a-zA-Z0-9', ]+")) {
 	        	label3.setText("*correct");
 	        	label3.setStyle("-fx-text-fill:green;");
 	        	i++;
@@ -118,7 +118,7 @@ Label label6;
 	        	label3.setStyle("-fx-text-fill:red;");
 	        }
 	        //---------------------------------------------------------
-	        if (h.matches("[a-zA-Z0-9']+")) {
+	        if (h.matches("[a-zA-Z0-9', ]+")) {
 	        	label4.setText("*correct");
 	        	label4.setStyle("-fx-text-fill:green;");
 	        	i++;
@@ -127,7 +127,7 @@ Label label6;
 	        	label4.setStyle("-fx-text-fill:red;");
 	        }
 	      //---------------------------------------------------------
-	        if (E.matches("[1-3].[0-9][0-9]$")) {
+	        if (F.matches("[1-3].[0-9][0-9]$")) {
 	        	label5.setText("*Taille correct");
 	        	label5.setStyle("-fx-text-fill:green;");
 	        	i++;
@@ -136,7 +136,7 @@ Label label6;
 	        	label5.setStyle("-fx-text-fill:red;");
 	        }
 	      //---------------------------------------------------------
-	        if (F.matches("([0-9]+).[0-9][0-9]$")) {
+	        if (E.matches("([0-9]+)$")) {
 	        	label6.setText("*Poids correct");
 	        	label6.setStyle("-fx-text-fill:green;");
 	        	i++;
