@@ -1,6 +1,11 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +14,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 public class Patientcont {
 @FXML
@@ -21,11 +29,32 @@ Label label1;
 @FXML
 Label label2;
 
+
+
+@FXML
+private TableColumn<Patient_tab, String> DATE;
+
+@FXML
+private TableColumn<Patient_tab,String> HEURE;
+
+@FXML
+private TableColumn<Patient_tab,Integer> ID;
+
+@FXML
+private TableColumn<Patient_tab, String> NOM;
+
+@FXML
+private TableColumn<Patient_tab, String> PRENOM;
+
+@FXML
+private TableView<Patient_tab> TABLE_PAT;
+
  
  private Stage stage;
  private Scene scene;
  private Parent root;
  int i;
+ 
  
  
  
@@ -89,18 +118,36 @@ Label label2;
         	label2.setStyle("-fx-text-fill:red;");
         }
         if (i==2) {
-        	nom = textnom.getText();
-    		prenom = textprenom.getText();
+        	HEURE.setCellValueFactory(new PropertyValueFactory<>("heure"));
+            ID.setCellValueFactory(new PropertyValueFactory<>("id"));
+             NOM.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            PRENOM.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+           DATE.setCellValueFactory(new PropertyValueFactory<>("date"));
+            
+            
+
+             // Connect to the database and retrieve data
+             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password")) {
+                 Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT * FROM your_table_name");
+
+                 // Populate the TableView with data from the database
+                 while (rs.next()) {
+                	 TABLE_PAT.getItems().add(new Patient_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("date"),rs.getString("heure")));
+                 }
+             } catch (SQLException e) {
+                 e.printStackTrace();
+             }
+        	 } 
+        	
     		
-        } 
+        }
         //---------------------------------------------------------------------------------
-        //manipulation base de donne 
+        
 		
 		
-		System.out.println(nom);
-		System.out.println(prenom);
+		
 		
 		
 	}
 
-}

@@ -1,13 +1,22 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class Progcont {
@@ -16,6 +25,20 @@ public class Progcont {
  private Scene scene;
  private Parent root;
  LocalDate currentDate = LocalDate.now();
+ @FXML
+ private TableColumn<Prog_j_tab, String> HEURE;
+
+ @FXML
+ private TableColumn<Prog_j_tab, Integer> ID;
+
+ @FXML
+ private TableColumn<Prog_j_tab, String> NOM;
+
+ @FXML
+ private TableColumn<Prog_j_tab, String> PRENOM;
+
+ @FXML
+ private TableView<Prog_j_tab> TABLE_PROG;
  
 
  public void switchtopatient(ActionEvent event) throws IOException {
@@ -54,8 +77,24 @@ public class Progcont {
 	  stage.show();
 	 }
  //---------------------------------------------------------------------------------
- //manipulation base de donne 
-	
-  //variable currentDate pour afficher la table 
- 
+ public void tablemanip(ActionEvent event) throws IOException {
+	 HEURE.setCellValueFactory(new PropertyValueFactory<>("heure"));
+    ID.setCellValueFactory(new PropertyValueFactory<>("id"));
+     NOM.setCellValueFactory(new PropertyValueFactory<>("nom"));
+    PRENOM.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+    
+
+     // Connect to the database and retrieve data
+     try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password")) {
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery("SELECT * FROM your_table_name");
+
+         // Populate the TableView with data from the database
+         while (rs.next()) {
+        	 TABLE_PROG.getItems().add(new Prog_j_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("heure")));
+         }
+     } catch (SQLException e) {
+         e.printStackTrace();
+     }
+	 }
 }

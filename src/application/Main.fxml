@@ -21,11 +21,16 @@
                </font>
             </Label>
             <Line endX="158.66665649414062" endY="7.62939453125E-6" layoutX="229.0" layoutY="60.0" startX="-100.0" />
-            <TableView layoutX="37.0" layoutY="102.0" prefHeight="359.0" prefWidth="440.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="80.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
+            <TableView fx:id="TABLE_PROG" layoutX="82.0" layoutY="243.0" onSort="#tablemanip" prefHeight="227.0" prefWidth="389.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="88.0">
+               <columns>
+                  <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="NOM" prefWidth="75.0" text="NOM" />
+                  <TableColumn fx:id="PRENOM" prefWidth="75.0" text="PRENOM" />
+                  <TableColumn fx:id="HEURE" prefWidth="75.0" text="HEURE" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
          </children></AnchorPane>
       <Button fx:id="prendre_rdv" layoutY="274.0" mnemonicParsing="false" onAction="#switchtoprendre_rdv" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PRENDRE UN RDV" textAlignment="CENTER">
