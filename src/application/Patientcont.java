@@ -138,7 +138,7 @@ private TableView<Patient_tab> TABLE_PAT;
              } catch (SQLException e) {
                  e.printStackTrace();
              }
-        	 } 
+        	 }
         	
     		
         }

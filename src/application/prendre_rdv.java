@@ -42,8 +42,7 @@ Label label4;
  int i;
  LocalDate currentDate = LocalDate.now();
  
- 
- 
+
 
  public void switchtoEcrire_ord(ActionEvent event) throws IOException {
   root = FXMLLoader.load(getClass().getResource("Ecrire_ord.fxml"));

@@ -170,9 +170,7 @@ Label label6;
     		 medic = medoc.getText();
     		 dure = duree.getText();
         } 
-      //---------------------------------------------------------------------------------
-        //manipulation base de donne 
-		
+     
 		System.out.println(nom);
 		System.out.println(prenom);
 		System.out.println(dn);

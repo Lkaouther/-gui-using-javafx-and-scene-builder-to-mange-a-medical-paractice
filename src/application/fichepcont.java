@@ -152,11 +152,10 @@ Label label6;
 	    		 E = POIDS.getText();
 	    		 F = TAILLE.getText();
 	        } 
-	        //---------------------------------------------------------------------------------
-	        //manipulation base de donne 
+	       
 	        
 			
-	        
+	       
 		
 		
 		

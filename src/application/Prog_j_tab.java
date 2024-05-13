@@ -48,5 +48,4 @@ public Prog_j_tab (int id ,String nom, String prenom,String heure){
 	public void setHeure(String heure) {
 		this.heure = heure;
 	}
-
 }

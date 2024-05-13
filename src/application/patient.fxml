@@ -5,8 +5,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
@@ -50,49 +48,21 @@
          <font>
             <Font size="8.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/png-clipart-calendar-computer-icons-symbol-symbol-miscellaneous-text.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Button fx:id="ecrir_or" layoutX="-1.0" layoutY="153.0" mnemonicParsing="false" onAction="#switchtoEcrire_ord" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="ECRIRE UNE ORDONANCE " textAlignment="CENTER">
          <font>
             <Font size="6.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/PRO.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Button fx:id="patient" layoutY="215.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PATIENTS">
          <font>
             <Font size="8.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.53" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/1430402.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Button fx:id="pr_j" layoutX="-1.0" layoutY="93.0" mnemonicParsing="false" onAction="#switchtoProg" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="PROGRAMME JOUR" textAlignment="CENTER">
          <font>
             <Font size="8.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/calnder.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Pane layoutY="6.0" prefHeight="72.0" prefWidth="149.0">
          <children>
@@ -113,25 +83,11 @@
          <font>
             <Font size="8.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/PRO.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
       <Button fx:id="prendre_rdv11" layoutY="389.0" mnemonicParsing="false" onAction="#switchtoFICHEP" prefHeight="46.0" prefWidth="174.0" stylesheets="@application.css" text="FICHE PATIENT" textAlignment="CENTER">
          <font>
             <Font size="8.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="19.0" fitWidth="20.0" opacity="0.59" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Downloads/PRO.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
    </children>
 </AnchorPane>
