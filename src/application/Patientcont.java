@@ -45,6 +45,11 @@ private TableColumn<Patient_tab, String> NOM;
 
 @FXML
 private TableColumn<Patient_tab, String> PRENOM;
+@FXML
+private TableColumn<Patient_tab,String> ANTC_CH;
+
+@FXML
+private TableColumn<Patient_tab, String> ANTC_M;
 
 @FXML
 private TableView<Patient_tab> TABLE_PAT;
@@ -123,6 +128,8 @@ private TableView<Patient_tab> TABLE_PAT;
              NOM.setCellValueFactory(new PropertyValueFactory<>("nom"));
             PRENOM.setCellValueFactory(new PropertyValueFactory<>("prenom"));
            DATE.setCellValueFactory(new PropertyValueFactory<>("date"));
+           ANTC_M.setCellValueFactory(new PropertyValueFactory<>("antm"));
+           ANTC_CH.setCellValueFactory(new PropertyValueFactory<>("antc"));
             
             
 
@@ -133,7 +140,7 @@ private TableView<Patient_tab> TABLE_PAT;
 
                  // Populate the TableView with data from the database
                  while (rs.next()) {
-                	 TABLE_PAT.getItems().add(new Patient_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("date"),rs.getString("heure")));
+                	 TABLE_PAT.getItems().add(new Patient_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("date"),rs.getString("heure"),rs.getString("antm"),rs.getString("antc")));
                  }
              } catch (SQLException e) {
                  e.printStackTrace();

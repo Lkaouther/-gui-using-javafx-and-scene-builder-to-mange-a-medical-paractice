@@ -25,7 +25,7 @@
                </font>
             </Label>
             <TextField fx:id="textprenom" layoutX="313.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" promptText="PRENOM..." />
-            <TextField fx:id="date" layoutX="54.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DATE...(jj-mm-anne)" />
+            <TextField fx:id="date" layoutX="54.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DATE...(anne-jj-mm)" />
             <TextField fx:id="duree" layoutX="313.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DUREE DU CONGE..(jour)" />
             <Button layoutX="147.0" layoutY="272.0" mnemonicParsing="false" onAction="#remplircer" prefHeight="33.0" prefWidth="187.0" text="REMPLIR LE CERTIFICAT" />
             <Label fx:id="label1" layoutX="54.0" layoutY="171.0" prefHeight="17.0" prefWidth="149.0" />

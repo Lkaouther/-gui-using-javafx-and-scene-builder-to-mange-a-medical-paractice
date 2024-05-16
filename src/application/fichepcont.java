@@ -25,6 +25,8 @@ TextField POIDS;
 @FXML
 TextField TAILLE;
 @FXML
+TextField NUM_TEL;
+@FXML
 Label label1;
 @FXML
 Label label2;
@@ -36,6 +38,8 @@ Label label4;
 Label label5;
 @FXML
 Label label6;
+@FXML
+Label label7;
  
 
  
@@ -91,6 +95,7 @@ Label label6;
 		String h = ANT_CH.getText();
 		String E = POIDS.getText();
 		String F = TAILLE.getText();
+		String NUM = NUM_TEL.getText();
 		 if (nom.matches("[a-zA-Z]+")) {
 	        	label1.setText("*Nom correct");
 	        	label1.setStyle("-fx-text-fill:green;");
@@ -144,7 +149,16 @@ Label label6;
 	        	label6.setText("*Poids inccorect");
 	        	label6.setStyle("-fx-text-fill:red;");
 	        }
-	        if (i==6) {
+	        //___________________________________________________________________
+	        if (NUM.matches("\\+213[5-7]\\d{8}")) {
+	        	label7.setText("*Numero correct");
+	        	label7.setStyle("-fx-text-fill:green;");
+	        	i++;
+	        } else {
+	        	label7.setText("*Numero inccorect");
+	        	label7.setStyle("-fx-text-fill:red;");
+	        }
+	        if (i==7) {
 	        	nom = textnom.getText();
 	    		 prenom = textprenom.getText();
 	    		 d = ANT_MEDI.getText();
