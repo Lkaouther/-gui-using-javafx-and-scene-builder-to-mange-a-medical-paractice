@@ -25,7 +25,7 @@
                </font>
             </Label>
             <TextField fx:id="prenomtext" layoutX="313.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" promptText="PRENOM..." />
-            <TextField fx:id="datenaiss" layoutX="54.0" layoutY="212.0" prefHeight="25.0" prefWidth="187.0" promptText="DATE NAISSANCE...(anne-jj-mm)" />
+            <TextField fx:id="datenaiss" layoutX="54.0" layoutY="212.0" prefHeight="25.0" prefWidth="187.0" promptText="DATE NAISSANCE...(anne-mm-jj)" />
             <TextField fx:id="diag" layoutX="313.0" layoutY="212.0" prefHeight="25.0" prefWidth="174.0" promptText="DIAGNOSTIQUE..." />
             <Button fx:id="remp" layoutX="164.0" layoutY="351.0" mnemonicParsing="false" onAction="#remplir" prefHeight="33.0" prefWidth="187.0" text="REMPLIR L'ORDONNANCE" />
             <TextField fx:id="medoc" layoutX="54.0" layoutY="290.0" prefHeight="25.0" prefWidth="187.0" promptText="MEDICAMENT..(med1,med2...)" />
