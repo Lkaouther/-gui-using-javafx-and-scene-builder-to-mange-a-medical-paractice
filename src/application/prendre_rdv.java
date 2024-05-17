@@ -105,7 +105,7 @@ Label label4;
 	        }
 	        
 	        //---------------------------------------------------------------------------------
-	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 
 	        try {
 	            LocalDate date = LocalDate.parse(d, formatter);
