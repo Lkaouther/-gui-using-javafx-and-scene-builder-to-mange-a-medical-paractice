@@ -133,22 +133,25 @@ private TableView<Patient_tab> TABLE_PAT;
             
             
 
-             // Connect to the database and retrieve data
-             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password")) {
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT * FROM your_table_name");
+           try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctor", "root", "saymmfladw")) {
+               Statement stmt = conn.createStatement();
+               ResultSet rs = stmt.executeQuery("select * from appointments CROSS JOIN patients where patients.first_name = '" + prenom + "' AND patients.last_name ='" + nom + "'and appointments.first_name = '" + prenom + "' AND appointments.last_name ='" + nom + "';");
+               
 
-                 // Populate the TableView with data from the database
-                 while (rs.next()) {
-                	 TABLE_PAT.getItems().add(new Patient_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("date"),rs.getString("heure"),rs.getString("antm"),rs.getString("antc")));
-                 }
-             } catch (SQLException e) {
-                 e.printStackTrace();
-             }
-        	 }
-        	
-    		
-        }
+
+               // Populate the TableView with data from the database
+               while (rs.next()) {
+                   TABLE_PAT.getItems().add(new Patient_tab(rs.getInt("id"), rs.getString("last_name"), rs.getString("first_name"),rs.getString("h"),rs.getString("date_rdv"),rs.getString("antecedent_medicaux"),rs.getString("antecedent_chirurgic")));
+
+
+}
+           } catch (SQLException e) {
+               e.printStackTrace();
+           }
+           }
+
+
+      }
         //---------------------------------------------------------------------------------
         
 		

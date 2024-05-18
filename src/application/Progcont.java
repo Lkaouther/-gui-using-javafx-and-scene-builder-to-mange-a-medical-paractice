@@ -84,18 +84,19 @@ public class Progcont {
     PRENOM.setCellValueFactory(new PropertyValueFactory<>("prenom"));
     
 
-     // Connect to the database and retrieve data
-     try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database_name", "username", "password")) {
-         Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT * FROM your_table_name");
-         
-         // Populate the TableView with data from the database
-         while (rs.next()) {
-        	 TABLE_PROG.getItems().add(new Prog_j_tab(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"),rs.getString("heure")));
-         }
-     } catch (SQLException e) {
-        e.printStackTrace();
-     }
-     
-	 }
+ // Connect to the database and retrieve data
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctor", "root", "saymmfladw")) {
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT appointment_id,last_name,first_name,h FROM appointments WHERE date_rdv = '"+ currentDate +"';");
+
+        // Populate the TableView with data from the database
+        while (rs.next()) {
+
+            TABLE_PROG.getItems().add(new Prog_j_tab(rs.getInt("appointment_id"), rs.getString("last_name"), rs.getString("first_name"),rs.getString("h")));
+
+        }
+    } catch (SQLException e) {
+       e.printStackTrace();
+    }
+    }
 }

@@ -105,7 +105,7 @@ Label label4;
 	        }
 	        
 	        //---------------------------------------------------------------------------------
-	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 	        try {
 	            LocalDate date = LocalDate.parse(d, formatter);
@@ -118,7 +118,7 @@ Label label4;
 	        	label3.setStyle("-fx-text-fill:red;");
 	        }
 	      //---------------------------------------------------------------------------------
-	        if (h.matches("^(0[1-8]|1[3-6]):[0-5][0-9]$")) {
+	        if (h.matches("^(0[8-9]|1[0-6]):[0-5][0-9]$")) {
 	        	label4.setText("*Heure correct");
 	        	label4.setStyle("-fx-text-fill:green;");
 	        	i++;
@@ -132,6 +132,7 @@ Label label4;
 	    	prenom = textprenom.getText();
 	    		 d = date.getText();
 	    		 h = heure.getText();
+	    		 Sql.addToDatabase("insert into  appointments (first_name, last_name, date_rdv,h) values ('" + prenom + "','" + nom + "','" + d + "','" + h + "')");
 	        } 
 	      //---------------------------------------------------------------------------------
 	        //manipulation base de donne 

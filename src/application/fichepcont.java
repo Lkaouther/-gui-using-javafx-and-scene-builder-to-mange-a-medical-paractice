@@ -165,6 +165,7 @@ Label label7;
 	    		 h = ANT_CH.getText();
 	    		 E = POIDS.getText();
 	    		 F = TAILLE.getText();
+	    		 Sql.addToDatabase("insert into patients ( first_name,last_name,antecedent_medicaux,antecedent_chirurgic,taille,pois,num) values ('" + prenom + "','" + nom + "','" + d + "','" + h + "','" + F + "','" + E + "', '" + NUM +"')");
 	        } 
 	       
 	        

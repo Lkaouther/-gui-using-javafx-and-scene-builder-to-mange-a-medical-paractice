@@ -121,11 +121,11 @@ Label label6;
         }
         
         //---------------------------------------------------------------------------------
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         try {
             LocalDate date = LocalDate.parse(dn, formatter);
-            if (date.isAfter(currentDate)||date.isEqual(currentDate)) {
+            if (date.isBefore(currentDate)||date.isEqual(currentDate)) {
             label3.setText("*Date correct");
         	label3.setStyle("-fx-text-fill:green;");
         	i++;}
@@ -169,6 +169,7 @@ Label label6;
     		 diagnostique = diag.getText();
     		 medic = medoc.getText();
     		 dure = duree.getText();
+    		 Sql.addToDatabase("insert into ordonnance ( first_name, last_name, d, ordonnance_text, medicament_txt, duration_in_days) values ('" + prenom + "','" + nom + "','" + dn + "','" + diagnostique + "','" + medic + "','" + dure + "')");
         } 
      
 		System.out.println(nom);

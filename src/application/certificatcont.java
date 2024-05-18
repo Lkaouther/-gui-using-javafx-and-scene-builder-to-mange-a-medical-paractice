@@ -105,7 +105,7 @@ Label label4;
         }
         
         //---------------------------------------------------------------------------------
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         try {
             LocalDate date = LocalDate.parse(d, formatter);
@@ -131,8 +131,10 @@ Label label4;
     		prenom = textprenom.getText();
     		 d = date.getText();
     		 h = duree.getText();
-        } 
+    		 Sql.addToDatabase("insert into  certificat_medical (first_name, last_name, d, duree) values ('" + prenom + "','" + nom + "','" + d + "','" + h + "')");
 		
+        } 
+       
 		
   
 		
